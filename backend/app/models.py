@@ -43,3 +43,14 @@ class MetricPoint(BaseModel):
     epoch: int
     loss: float = Field(..., description="Training loss (decreasing)")
     accuracy: float = Field(..., description="Training accuracy (increasing)")
+
+class RunLog(BaseModel):
+    ts: datetime
+    level: str
+    message: str
+
+
+class RunMetric(BaseModel):
+    ts: datetime
+    loss: float
+    accuracy: float
